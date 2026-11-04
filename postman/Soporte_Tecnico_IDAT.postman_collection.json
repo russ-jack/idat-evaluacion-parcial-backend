@@ -1,0 +1,207 @@
+{
+  "info": {
+    "name": "API Soporte Técnico - IDAT Evaluación Parcial",
+    "_postman_id": "8c4598d1-419b-4654-8c01-7fa8b9e67123",
+    "description": "Colección completa de pruebas funcionales CRUD y validaciones para la Evaluación Parcial de Desarrollo de los Componentes del Negocio - IDAT.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. POST - Registrar Solicitud Exitosa (201 Created)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Falla en la red local del piso 3\",\n  \"descripcion\": \"Los switches principales no entregan direccionamiento IP por DHCP a los equipos clientes.\",\n  \"clienteId\": 1,\n  \"tecnicoId\": 1,\n  \"prioridad\": \"ALTA\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/solicitudes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "solicitudes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "2. POST - Error Validación de Datos (400 Bad Request)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"\",\n  \"descripcion\": \"corta\",\n  \"clienteId\": null\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/solicitudes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "solicitudes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. GET - Listar Todas las Solicitudes (200 OK)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/solicitudes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "solicitudes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "4. GET - Filtrar Solicitudes por Estado (200 OK)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/solicitudes?estado=EN_PROCESO",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "solicitudes"
+          ],
+          "query": [
+            {
+              "key": "estado",
+              "value": "EN_PROCESO"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "5. GET - Buscar Solicitud por ID Existente (200 OK)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/solicitudes/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "solicitudes",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "6. GET - Buscar Solicitud Inexistente (404 Not Found)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/solicitudes/999",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "solicitudes",
+            "999"
+          ]
+        }
+      }
+    },
+    {
+      "name": "7. PUT - Actualizar Solicitud (200 OK)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Falla en la red resuelta en piso 3\",\n  \"descripcion\": \"Se reemplazó el módulo de fibra dañado y se restableció el servicio DHCP.\",\n  \"clienteId\": 1,\n  \"tecnicoId\": 1,\n  \"prioridad\": \"MEDIA\",\n  \"estado\": \"RESUELTO\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/solicitudes/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "solicitudes",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "8. DELETE - Eliminar Solicitud Existente (204 No Content)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/solicitudes/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "solicitudes",
+            "1"
+          ]
+        }
+      }
+    }
+  ]
+}
