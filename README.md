@@ -4,25 +4,28 @@ title: README
 type: note
 ---
 
-# 🚀 API RESTful para Gestión de Solicitudes de Soporte Técnico
+# 🛠️ API RESTful para Gestión de Solicitudes de Soporte Técnico
 
 Proyecto correspondiente a la **Evaluación Parcial** de la unidad didáctica **Desarrollo de los Componentes del Negocio** en **IDAT**.
 
 ---
 
-## 👥 Integrantes del Equipo
-| N° | Apellidos y Nombres | Código de Alumno | Rol en el Proyecto |
-|:--:|:--------------------|:----------------:|:-------------------|
-| 1 | [Nombre Integrante 1] | [Código 1] | **Líder Backend & Modelado POO** |
-| 2 | [Nombre Integrante 2] | [Código 2] | **Desarrollador API REST & DTOs** |
-| 3 | [Nombre Integrante 3] | [Código 3] | **Especialista en QA, Postman & Swagger** |
+## 👤 Datos del Estudiante (Desarrollo Individual)
+* **Estudiante:** Russ Jack Tapia Apaza
+* **Carrera:** Escuela de Tecnología - IDAT
+* **Rol en el Proyecto:** Desarrollador Backend Full-Lifecycle
+  * **Modelado POO:** Diseño de clases con herencia (`Persona` -> `Cliente`, `Tecnico`), encapsulamiento y polimorfismo.
+  * **Persistencia en Memoria:** Simulación de base de datos usando `ConcurrentHashMap`, `ArrayList` y `AtomicLong`.
+  * **API RESTful:** Controladores `@RestController`, respuestas `ResponseEntity` y códigos HTTP (`200`, `201`, `204`, `400`, `404`).
+  * **Validaciones & Excepciones:** Bean Validation (`@Valid`, `@NotBlank`, `@Size`, `@NotNull`) y `@RestControllerAdvice`.
+  * **Documentación & QA:** Integración con Swagger OpenAPI 3 y diseño/ejecución de pruebas funcionales en Postman.
 
 ---
 
 ## 📌 Contexto Problemático
 Una empresa de servicios tecnológicos registraba las solicitudes de soporte técnico en papel y correos electrónicos desordenados, generando extravío de información y demoras críticas en los tiempos de respuesta. 
 
-Esta solución implementa una **API RESTful robusta con Spring Boot y Java**, estructurada en arquitectura limpia de capas, con persistencia simulada en estructuras de datos en memoria (`Map` y `List`), validaciones estrictas y documentación estandarizada.
+Esta solución implementa una **API RESTful robusta con Spring Boot y Java**, estructurada en arquitectura limpia de capas, con persistencia simulada en estructuras de datos en memoria (`Map` y `List`), validaciones estrictas y documentación estandarizada sin dependencias de base de datos externa.
 
 ---
 
@@ -74,7 +77,7 @@ src/main/java/pe/edu/idat/soporte/
 
 ### Prerrequisitos
 * Tener instalado el **Java Development Kit (JDK 17 o superior)**.
-* Disponer de **Apache Maven** o abrir el proyecto directamente en un IDE como **IntelliJ IDEA**, **Eclipse STS** o **VS Code**.
+* Disponer de **Apache Maven** (o usar el wrapper incluido `./mvnw`).
 
 ### Pasos para compilar y ejecutar:
 1. Clonar el repositorio:
@@ -84,11 +87,11 @@ src/main/java/pe/edu/idat/soporte/
    ```
 2. Compilar el proyecto con Maven:
    ```bash
-   mvn clean install
+   ./mvnw clean install
    ```
 3. Iniciar la aplicación:
    ```bash
-   mvn spring-boot:run
+   ./mvnw spring-boot:run
    ```
 4. El servidor se iniciará en el puerto `8080`: `http://localhost:8080`
 
