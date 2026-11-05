@@ -1,3 +1,9 @@
+---
+permalink: jakyri/idat-evaluacion-parcial-backend/readme
+title: README
+type: note
+---
+
 # 🚀 API RESTful para Gestión de Solicitudes de Soporte Técnico
 
 Proyecto correspondiente a la **Evaluación Parcial** de la unidad didáctica **Desarrollo de los Componentes del Negocio** en **IDAT**.
